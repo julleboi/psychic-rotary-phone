@@ -1,4 +1,4 @@
-{
+export const response = {
   "books": [
     {
       "id": "134039",
@@ -2842,4 +2842,4 @@
   "total": 133,
   "totalEbooks": 104,
   "totalAudioBooks": 29
-}
+};

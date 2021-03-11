@@ -1,10 +1,13 @@
-import React from 'react';
+import React from "react";
+import Navigation from "./Navigation";
+import Books from "./Books";
 
 function App() {
   return (
-    <div>
-      <h1>Hello world!</h1>
-    </div>
+    <React.Fragment>
+      <Navigation />
+      <Books />
+    </React.Fragment>
   );
 }
 
