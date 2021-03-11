@@ -23,7 +23,16 @@ module.exports = {
           }
         ],
         "@babel/plugin-transform-react-inline-elements",
-        "@babel/plugin-transform-react-constant-elements"
+        "@babel/plugin-transform-react-constant-elements",
+        [
+          "babel-plugin-import",
+          {
+            "libraryName": "@material-ui/core",
+            "libraryDirectory": "esm",
+            "camel2DashComponentsName": false
+          },
+          "core"
+        ]
       ]
     }
   }
