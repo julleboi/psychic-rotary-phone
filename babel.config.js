@@ -25,13 +25,13 @@ module.exports = {
         "@babel/plugin-transform-react-inline-elements",
         "@babel/plugin-transform-react-constant-elements",
         [
-          "babel-plugin-import",
+          "babel-plugin-transform-imports",
           {
-            "libraryName": "@material-ui/core",
-            "libraryDirectory": "esm",
-            "camel2DashComponentsName": false
-          },
-          "core"
+            "@material-ui/core": {
+              "transform": "@material-ui/core/esm/${member}",
+              "preventFullImport": true
+            }
+          }
         ]
       ]
     }
