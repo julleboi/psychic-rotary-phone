@@ -8,8 +8,8 @@ import {
 function Navigation() {
   return (
     <AppBar position="static">
-      <Toolbar>
-        <Typography variant="h4">
+      <Toolbar variant="dense">
+        <Typography variant="h6">
           📚 Elisa Kirja
         </Typography>
       </Toolbar>
