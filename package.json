@@ -7,7 +7,8 @@
   "scripts": {
     "start": "yarn start:dev",
     "start:dev": "webpack serve",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
