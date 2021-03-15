@@ -86,6 +86,7 @@ function ListItem({ book, divider }) {
             align="justify"
             variant="body2"
             dangerouslySetInnerHTML={{__html: description}}
+            gutterBottom
           />
           <Box className={rest}>
             <Typography color="textSecondary" variant="body2">
