@@ -11,6 +11,7 @@ jobs:
   test:
     name: Test suite
     runs-on: ubuntu-latest
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Setup Node.js
@@ -25,6 +26,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Setup Node.js
