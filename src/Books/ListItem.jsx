@@ -39,7 +39,7 @@ const useStyles = makeStyles({
     flexDirection: "row",
     alignItems: "center",
     "& p": {
-      marginRight: 8
+      marginRight: 16
     }
   }
 });
@@ -53,7 +53,7 @@ function ListItem({ book, divider }) {
   }
 
   const { avatar, desc, small, rest } = useStyles();
-  const { title, description, authors, coverImage, currentPrice, contentType } = book;
+  const { title, description, authors, coverImage, currentPrice, contentType, published } = book;
   const authorsText = authors.map(a => a.title).join(", ");
 
   return (
@@ -95,6 +95,9 @@ function ListItem({ book, divider }) {
             </Typography>
             <Typography data-testid="listItemPrice" color="textSecondary" variant="body2">
               { formatPrice(currentPrice) }
+            </Typography>
+            <Typography color="textSecondary" variant="body2">
+              { published }
             </Typography>
           </Box>
           <ListItemSecondaryAction>

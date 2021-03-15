@@ -36,14 +36,14 @@ const useStyles = makeStyles({
     flexDirection: "row",
     alignItems: "center",
     "& p": {
-      marginRight: 8
+      marginRight: 16
     }
   }
 });
 
 function GridItem({ book }) {
   const { item, head, cover, desc, rest } = useStyles();
-  const { title, description, authors, coverImage, currentPrice, contentType } = book;
+  const { title, description, authors, coverImage, currentPrice, contentType, published } = book;
   const authorsText = authors.map(a => a.title).join(", ");
 
   return (
@@ -79,6 +79,9 @@ function GridItem({ book }) {
         </Typography>
         <Typography data-testid="gridItemPrice" color="textSecondary" variant="body2">
           { formatPrice(currentPrice) }
+        </Typography>
+        <Typography color="textSecondary" variant="body2">
+          { published }
         </Typography>
       </Box>
     </Card>
