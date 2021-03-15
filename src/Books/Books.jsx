@@ -28,41 +28,33 @@ function Books() {
     const copy = books.map(b => Object.assign({}, b));
 
     switch(sortBy) {
-      case "published":
-        return copy.sort((a, b) => (a.published || 9001) - (b.published || 9001));
-      case "price":
-        return copy.sort((a, b) => a.currentPrice - b.currentPrice);
-      default:
-        return books;
+      case "oldest":
+        copy.sort((a, b) => (a.published || 9001) - (b.published || 9001));
+        break;
+      case "newest":
+        copy.sort((a, b) => (b.published || -1) - (a.published || -1));
+        break;
+      case "lowest price":
+        copy.sort((a, b) => a.currentPrice - b.currentPrice);
+        break;
+      case "highest price":
+        copy.sort((a, b) => b.currentPrice - a.currentPrice);
+        break;
     }
+    
+    return copy;
   }, [books, sortBy]);
   
   function handleChangeView(event) {
     event.preventDefault();
     const value = event.target.value;
-
-    switch (value) {
-      case "grid":
-      case "list":
-        if (view !== value)
-          setView(value);
-        break;
-      default:
-    }
+    setView(value);
   }
 
   function handleChangeSortBy(event) {
     event.preventDefault();
     const value = event.target.value;
-
-    switch (value) {
-      case "published":
-      case "price":
-        if (sortBy !== value)
-          setSortBy(value);
-        break;
-      default:
-    }
+    setSortBy(value);
   }
 
   return (
@@ -72,7 +64,7 @@ function Books() {
           views={["grid", "list"]}
           currentView={view}
           onChangeView={handleChangeView}
-          sortBy={["published", "price"]}
+          sortBy={["oldest", "newest", "lowest price", "highest price"]}
           currentSortBy={sortBy}
           onChangeSortBy={handleChangeSortBy}
         />
