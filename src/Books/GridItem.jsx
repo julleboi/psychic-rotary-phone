@@ -62,7 +62,7 @@ function GridItem({ book }) {
         <Typography color="primary">
           Description
         </Typography>
-        <Box className={desc} p={1}>
+        <Box pr={1} className={desc}>
           <Typography
             data-testid="gridItemDesc"
             align="justify"
@@ -71,7 +71,7 @@ function GridItem({ book }) {
           />
         </Box>
       </CardContent>
-      <Box className={rest} p={2}>
+      <Box className={rest} px={2} pb={1}>
         <Typography color="textSecondary" variant="body2">
           { contentType.mimetype.startsWith("audio/")
             ? <Headset size="inherit" />
